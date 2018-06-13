@@ -1,0 +1,26 @@
+﻿
+@model VkUserModel
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="@Model.Avatar" alt="" class="img-thumbnail" />
+                </div>
+                <div class="col-md-10">
+                    <h4>@(Model.FirstName + Model.LastName)</h4>
+                    <p><i class="fab fa-github"></i><a href="@Model.PageUrl">Link</a></p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

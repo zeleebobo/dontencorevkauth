@@ -1,0 +1,36 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="@Model.Avatar" alt="" class="img-thumbnail" />
+                </div>
+                <div class="col-md-10">
+                    <h4>@(Model.FirstName + Model.LastName)</h4>
+                    <p><i class="fab fa-github"></i><a href="@Model.PageUrl">Link</a></p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
